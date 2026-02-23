@@ -25,3 +25,6 @@
 |       字体       |                   `/ChillBitmap_16px.ttf`                    | SIL OFL 1.1 + GPLv2 + GNU字体嵌入例外 |      `/LICENSE-Font.txt`       |    Github Actions运行过程中下载，字库图像使用此字体生成    |
 |     字库图像     | `/fmv/font_raster0.png`<br/>`/level/font_raster0.png`<br/>`/menu/font_raster0.png`<br/> |            CC BY-NC-SA 4.0            | `/LICENSE-CC BY-NC-SA 4.0.txt` | Github Actions运行过程中间产物，最终产物中包含字库图像数据 |
 | 原始文件拆解产物 | `/fmv/font_line_height0.txt`<br/>`/fmv/font_name0.txt`<br/>`/fmv/text_identifiers.csv`<br/>`/level/font_line_height0.txt`<br/>`/level/font_name0.txt`<br/>`/level/text_identifiers.csv`<br/>`/menu/font_line_height0.txt`<br/>`/menu/font_name0.txt`<br/>`/menu/text_identifiers.csv`<br/> |                  无                   |               无               |              文件数据内数据提取自游戏原始文件              |
+
+## 赞赏
+[![pZvnZEF.png](https://s41.ax1x.com/2026/02/24/pZvnZEF.png)](https://imgchr.com/i/pZvnZEF)
