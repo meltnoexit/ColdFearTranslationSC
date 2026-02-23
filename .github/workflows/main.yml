@@ -1,0 +1,50 @@
+name: Build
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install pillow coldfearlngbundler
+
+      - name: Download Font
+        run: |
+          wget https://github.com/Warren2060/ChillBitmap/releases/download/v2.502/ChillBitmap_New.zip
+          unzip -q -o -j ./ChillBitmap_New.zip "ChillBitmap_New/ChillBitmap_16px.ttf"
+        
+      - name: Generate CharSet Files
+        run: python generateCharsetFiles.py
+        
+      - name: Build release distributions
+        run: |
+          mkdir bundled
+          coldfearlngbundler bundle ./fmv -o ./bundled/fmv.lng
+          coldfearlngbundler bundle ./level -o ./bundled/level.lng
+          coldfearlngbundler bundle ./menu -o ./bundled/menu.lng
+          zip -j -r ./ColdFearTranslationSC-${{ github.event.release.tag_name }}.zip ./bundled/*
+
+      - name: Upload distributions
+        uses: actions/upload-artifact@v4
+        with:
+          name: ColdFearTranslationSC-${{ github.event.release.tag_name }}
+          path: ./ColdFearTranslationSC-${{ github.event.release.tag_name }}.zip
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.release.tag_name }}
+          files: ./ColdFearTranslationSC-${{ github.event.release.tag_name }}.zip
+          overwrite: true
+          fail_on_unmatched_files: true
