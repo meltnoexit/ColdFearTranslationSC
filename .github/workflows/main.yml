@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  release-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install pillow coldfearlngbundler
+
+      - name: Download Font
+        run: |
+          wget https://github.com/Warren2060/ChillBitmap/releases/download/v2.502/ChillBitmap_New.zip
+          unzip -q -o -j ./ChillBitmap_New.zip "ChillBitmap_New/ChillBitmap_16px.ttf"
+        
+      - name: Generate CharSet Files
+        run: python GenerateCharsetFiles.py
+        
+      - name: Build release distributions
+        run: |
+          mkdir bundled
+          coldfearlngbundle ./fmv -o ./bundled/fmv.lng
+          coldfearlngbundle ./level -o ./bundled/level.lng
+          coldfearlngbundle ./menu -o ./bundled/menu.lng
+          zip -j -r ./ColdFearTranslationSC.zip ./bundled/*
+
+      - name: Upload distributions
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-dists
+          path: ./ColdFearTranslationSC.zip
