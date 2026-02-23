@@ -29,9 +29,9 @@ jobs:
       - name: Build release distributions
         run: |
           mkdir bundled
-          coldfearlngbundler ./fmv -o ./bundled/fmv.lng
-          coldfearlngbundler ./level -o ./bundled/level.lng
-          coldfearlngbundler ./menu -o ./bundled/menu.lng
+          coldfearlngbundler bundle ./fmv -o ./bundled/fmv.lng
+          coldfearlngbundler bundle ./level -o ./bundled/level.lng
+          coldfearlngbundler bundle ./menu -o ./bundled/menu.lng
           zip -j -r ./ColdFearTranslationSC.zip ./bundled/*
 
       - name: Upload distributions
