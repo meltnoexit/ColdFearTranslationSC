@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main]
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   release-build:
@@ -32,10 +32,20 @@ jobs:
           coldfearlngbundler bundle ./fmv -o ./bundled/fmv.lng
           coldfearlngbundler bundle ./level -o ./bundled/level.lng
           coldfearlngbundler bundle ./menu -o ./bundled/menu.lng
-          zip -j -r ./ColdFearTranslationSC.zip ./bundled/*
+          zip -j -r ./ColdFearTranslationSC-${{ github.event.release.tag_name }}.zip ./bundled/*
 
       - name: Upload distributions
         uses: actions/upload-artifact@v4
         with:
-          name: release-dists
-          path: ./ColdFearTranslationSC.zip
+          name: ColdFearTranslationSC-${{ github.event.release.tag_name }}
+          path: ./ColdFearTranslationSC-${{ github.event.release.tag_name }}.zip
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.release.tag_name }}
+          files: ./ColdFearTranslationSC-${{ github.event.release.tag_name }}.zip
+          overwrite: true
+          fail_on_unmatched_files: true
