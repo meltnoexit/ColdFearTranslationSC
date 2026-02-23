@@ -24,7 +24,7 @@ jobs:
           unzip -q -o -j ./ChillBitmap_New.zip "ChillBitmap_New/ChillBitmap_16px.ttf"
         
       - name: Generate CharSet Files
-        run: python GenerateCharsetFiles.py
+        run: python generateCharsetFiles.py
         
       - name: Build release distributions
         run: |
