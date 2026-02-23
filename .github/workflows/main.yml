@@ -3,7 +3,8 @@ name: Build
 on:
   release:
     types: [published]
-
+  pull_request:
+    branches: [main]
 permissions:
   contents: read
 
