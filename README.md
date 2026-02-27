@@ -27,4 +27,4 @@
 | 原始文件拆解产物 | `/fmv/font_line_height0.txt`<br/>`/fmv/font_name0.txt`<br/>`/fmv/text_identifiers.csv`<br/>`/level/font_line_height0.txt`<br/>`/level/font_name0.txt`<br/>`/level/text_identifiers.csv`<br/>`/menu/font_line_height0.txt`<br/>`/menu/font_name0.txt`<br/>`/menu/text_identifiers.csv`<br/> |                  无                   |               无               |              文件数据内数据提取自游戏原始文件              |
 
 ## 赞赏
-[![pZvnZEF.png](https://s41.ax1x.com/2026/02/24/pZvnZEF.png)](https://imgchr.com/i/pZvnZEF)
+[![赞赏码](https://image-upload.meltnt.org/wechat-appreciation.jpg)](https://image-upload.meltnt.org/wechat-appreciation.jpg)
