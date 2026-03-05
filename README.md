@@ -6,7 +6,7 @@
 - [寒蝉点阵体](https://github.com/Warren2060/ChillBitmap"寒蝉点阵体") ：使用此字体用于生成简体中文位图字库
 
 ##  使用方法
-
+在[Releases](https://github.com/meltnoexit/ColdFearTranslationSC/releases"Releases")下载ColdFearTranslationSC.zip并解压出三个文件后
 替换`<游戏路径>\data\english`中的对应文件
 
 ## 贡献
