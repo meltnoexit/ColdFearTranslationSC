@@ -2,11 +2,11 @@
 
 ## 依赖资源
 
-- [ColdFearLngBundler](https://github.com/meltnoexit/ColdFearLngBundler"ColdFearLngBundler")  ：使用此工具获取游戏原始英语资源文件的附加信息并在此基础上使用它生成简中资源文件
-- [寒蝉点阵体](https://github.com/Warren2060/ChillBitmap"寒蝉点阵体") ：使用此字体用于生成简体中文位图字库
+- [ColdFearLngBundler](https://github.com/meltnoexit/ColdFearLngBundler)  ：使用此工具获取游戏原始英语资源文件的附加信息并在此基础上使用它生成简中资源文件
+- [寒蝉点阵体](https://github.com/Warren2060/ChillBitmap) ：使用此字体用于生成简体中文位图字库
 
 ##  使用方法
-在[Releases](https://github.com/meltnoexit/ColdFearTranslationSC/releases"Releases")下载ColdFearTranslationSC.zip并解压出三个文件后替换`<游戏路径>\data\english`中的对应文件
+在[Releases](https://github.com/meltnoexit/ColdFearTranslationSC/releases)下载ColdFearTranslationSC.zip并解压出三个文件后替换`<游戏路径>\data\english`中的对应文件
 
 ## 贡献
 
